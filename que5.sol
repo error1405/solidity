@@ -27,8 +27,8 @@ contract que2{
     }
 
     function transferAuth(address oldVoter, address _voter) public{
-        require(msg.sender == chairman);
-        require(oldVoter == voter1 || oldVoter == voter2);
+        require(msg.sender == chairman, "You're Not Chairman");
+        require(oldVoter == voter1 || oldVoter == voter2, "Voter Not Found");
 
         if(oldVoter == voter1) 
         {
